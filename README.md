@@ -2,7 +2,9 @@
 
 Keystone key 123456
 
-Our mobile application for our second semester project (group 208)
+Remember to build this on Android through the Unity build settings
+
+Our mobile application for my groups second semester project (group 208)
 
 
 Hamza Majid Qureshi
@@ -14,21 +16,12 @@ Amanda Leithoff Johansen
 Yavuz Akyüz 
 Frederik Ljungquist 
 
-Branches...
+How to run the software:
+It can be done by accessing the Package Manager in the Window tab in Unity Editor and pressing the + icon to add a Package. Some packages can be added with search of a name, others with url.
 
-main: Not the main branch, but a branch used in the beginning of the project. Not updated.
-NewFigmaImplementation: Used as this project's main branch. The most up to date, and with each branch merged into this.
+3 different Packages needs to be installed:
 
 
-Extra Branches...
-
-FurtherRoomData: Branch with Adgang page, most up to date
-ControlManagerBackup: Control manager fixes
-ControlManager: Old control manager
-Room-Info: Old branch with Adgang page
-Gyroscope: First iteration of the gyroscope function
-Notifikationer: Notifikation page 
-origin/Lyde: First iteration of sound scripts
-origin/Popupbesked: First iteration of pop up message of study card
-origin/SoundManager: 2. iteration of sound scripts
-Gyroscope: 2. iteration of gyroscope scripts.
+1. Vector Graphics. This was implemented to make the svg files from Figma be imported to Unity correctly. Figma was the main program used for the design.
+2. Input Manager. A mandatory implementation, yet this is the one that’s used for transforming the inputs of a fingers touch to a left click, thereby making the application and buttons interactable.
+3. Device Simulator. Used as a practical tool to help develop an app, as this can simulate Auto rotations, touch input, screen safe area blabla. This was a convinient tool for having the Unity Editor more in sync with what the build project would look like.
