@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/#1 Studycard.unity
+    guid: 0cd2ed95e642da146bfa311347698fc9
+  - enabled: 1
+    path: Assets/Scenes/TestingScene.unity
+    guid: 6bd5b5608189e5a498f7a616652c099e
+  - enabled: 1
+    path: Assets/Scenes/RumOversigt.unity
+    guid: e787583d0147d9b4bab00159b2073f37
+  - enabled: 1
+    path: Assets/Scenes/Notifikationer.unity
+    guid: 6b0ed769add934fff927567fbc1270f6
+  - enabled: 1
+    path: Assets/Scenes/RumOversigtAdgang.unity
+    guid: ef4ee2918220e9e40831b44c0f8bc246
+  - enabled: 1
+    path: "Assets/Scenes/RumOversigtBegr\xE6nset.unity"
+    guid: 208a62d9c24f8294e8304e412d825737
+  - enabled: 1
+    path: Assets/Scenes/RumOversigtIngen.unity
+    guid: 2bcd62528f6bce44b8e1f50ecbd41e95
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 754bec50101d9e94ab471456dcb96bf1, type: 2}
