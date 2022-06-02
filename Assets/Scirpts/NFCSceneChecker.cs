@@ -17,7 +17,7 @@ public class NFCSceneChecker : MonoBehaviour
     private string sAction;
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null) //Hvorfor er den en singleton?
         {
             instance = this;
             DontDestroyOnLoad(base.gameObject);
