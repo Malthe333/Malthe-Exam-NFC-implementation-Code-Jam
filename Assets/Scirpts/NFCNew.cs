@@ -22,7 +22,7 @@ public class NFCNew : MonoBehaviour
 	public GameObject Red;
 	public GameObject Button;
 	public GameObject ButtonYellow;
-	public GameObject ScanAnimation;
+	public GameObject ScanAnimation; 
 	bool canScan = true;
 	void Start()
 	{
@@ -32,17 +32,17 @@ public class NFCNew : MonoBehaviour
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			tag_output_text.text = tagFound.ToString();
-			if (!tagFound) //remove
+			tag_output_text.text = tagFound.ToString(); // ToString sætter værdien af tagfound til en string value
+			if (!tagFound) //
 			{
 				if (Key)
 				{
 					// Create new NFC Android object
-					mActivity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity"); // Activities open apps
+					mActivity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity"); // Activities open apps. new og static??
 
-					mIntent = mActivity.Call<AndroidJavaObject>("getIntent");
+					mIntent = mActivity.Call<AndroidJavaObject>("getIntent"); //caller et JavaObject callet getIntent
 					
-					sAction = mIntent.Call<String>("getAction"); // resulte are returned in the Intent object
+					sAction = mIntent.Call<String>("getAction"); // resulte are returned in the Intent object. Caller en string værdi
 
 					if (sAction == "android.nfc.action.NDEF_DISCOVERED")
 					{
@@ -55,11 +55,11 @@ public class NFCNew : MonoBehaviour
 						AndroidJavaObject mNdefMessage = mIntent.Call<AndroidJavaObject>("getParcelableExtra", "android.nfc.extra.TAG");
 						if (mNdefMessage != null)
 						{
-							byte[] payLoad = mNdefMessage.Call<byte[]>("getId");
-							string text = System.Convert.ToBase64String(payLoad);
+							byte[] payLoad = mNdefMessage.Call<byte[]>("getId"); //Caller byte værdien "getId"
+							string text = System.Convert.ToBase64String(payLoad);  //Ændrer fra byte til text værdi
 							tag_output_text.text += "This is your tag text: " + text;
 							canScan = true;
-							tagID = text; //this is constantly running even though 
+							tagID = text; 
 							StartCoroutine(CountDown());
 						}
 						else
@@ -85,19 +85,20 @@ public class NFCNew : MonoBehaviour
 		mIntent.Call("removeExtra", "android.nfc.extra.TAG");
 	}
 
-	IEnumerator Count()
+	IEnumerator Count() 
 	{
 		canScan = false;
 		tagFound = true;
 		Key = false;
 		yield return new WaitForSeconds(0.05f);
-		tagID = "dasd";
+		tagID = "dasd"; 
 		mIntent.Call("removeExtra", "android.nfc.extra.TAG");
         tagFound = false;
 		Key = true;
 		yield return new WaitForSeconds(7);
 		mIntent.Call("removeExtra", "android.nfc.extra.TAG");
-	}
+	} 
+
 	IEnumerator CountDown()
     {
 		yield return new WaitForSeconds(7);

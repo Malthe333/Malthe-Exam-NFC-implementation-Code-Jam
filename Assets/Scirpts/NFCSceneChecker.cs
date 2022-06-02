@@ -15,18 +15,20 @@ public class NFCSceneChecker : MonoBehaviour
     private AndroidJavaObject mActivity;
     private AndroidJavaObject mIntent;
     private string sAction;
-    private void Awake()
+    
+	private void Awake()
     {
         if (instance == null) //Hvorfor er den en singleton?
         {
-            instance = this;
-            DontDestroyOnLoad(base.gameObject);
+            instance = this; //aktivering, instanciates 1 gang fordi det er en static.
+            DontDestroyOnLoad(base.gameObject); //finder variablen som er defineret i Monobehavior. bruges i forskellgie værdier i parent class
         }
         else
         {
             Destroy(base.gameObject);
         }
     }
+
     private void Start()
     {
         tag_output_text.text = "";
@@ -79,13 +81,6 @@ public class NFCSceneChecker : MonoBehaviour
 						tag_output_text.text = "Scan a NFC tag to make the cube disappear...";
 						return;
 					}
-				
-				/*catch (Exception ex)
-				{
-					string text = ex.Message;
-					tag_output_text.text = text;
-				}
-				*/
 			}
 		}
 		mIntent.Call("removeExtra", "android.nfc.extra.TAG");
